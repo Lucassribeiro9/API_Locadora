@@ -33,7 +33,7 @@ namespace API_Locadora.Controllers
         }
 
         // GET: api/Filme/5
-        [HttpGet("{id}")]
+       /* [HttpGet("Busca por ID")]
         public async Task<ActionResult<Filme>> GetFilme(int id)
         {
           if (_context.Filmes == null)
@@ -48,11 +48,28 @@ namespace API_Locadora.Controllers
             }
 
             return filme;
+        } */
+
+        [HttpGet("Busca por genero")]
+        public async Task<ActionResult<IEnumerable<Filme>>> GetFilmeGenero(string genero)
+        {
+            if (_context.Filmes == null)
+            {
+                return NotFound();
+            }
+            var filme = await _context.Filmes.Where(x => x.Genero.Equals(genero)).ToListAsync();
+
+            if (filme == null)
+            {
+                return NotFound();
+            }
+
+            return filme;
         }
 
         // PUT: api/Filme/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("Atualizar")]
         public async Task<IActionResult> PutFilme(int id, Filme filme)
         {
             if (id != filme.Id)
