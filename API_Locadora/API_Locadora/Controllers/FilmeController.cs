@@ -74,7 +74,7 @@ namespace API_Locadora.Controllers
         {
             if (id != filme.Id)
             {
-                
+
                 return Problem("O filme já existe! Faça uma alteração diferente.");
             }
 
@@ -106,13 +106,24 @@ namespace API_Locadora.Controllers
         {
             if (_context.Filmes == null)
             {
-                return Problem("Entity set 'LocadoraDbContext.Filmes'  is null.");
+                return Problem("Erro ao adicionar filme!");
             }
-            
-            _context.Filmes.Add(filme);
-            await _context.SaveChangesAsync();
+            if (FilmeExistsName(filme.Nome))
+            {
+                return Problem("Erro");
+            }
+            if (ModelState.IsValid)
+            {
 
-            return CreatedAtAction("GetFilme", new { id = filme.Id }, filme);
+                _context.Filmes.Add(filme);
+                await _context.SaveChangesAsync();
+                return filme;
+                // return CreatedAtAction("GetFilme", new { id = filme.Id }, filme);
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
         }
 
         // DELETE: api/Filme/5
@@ -138,6 +149,10 @@ namespace API_Locadora.Controllers
         private bool FilmeExists(int id)
         {
             return (_context.Filmes?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
+        private bool FilmeExistsName(string nome)
+        {
+            return (_context.Filmes?.Any(e => e.Nome == nome)).GetValueOrDefault();
         }
     }
 }
