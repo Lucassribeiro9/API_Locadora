@@ -25,30 +25,30 @@ namespace API_Locadora.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Filme>>> GetFilmes()
         {
-          if (_context.Filmes == null)
-          {
-              return NotFound();
-          }
+            if (_context.Filmes == null)
+            {
+                return NotFound();
+            }
             return await _context.Filmes.ToListAsync();
         }
 
         // GET: api/Filme/5
-       /* [HttpGet("Busca por ID")]
-        public async Task<ActionResult<Filme>> GetFilme(int id)
-        {
-          if (_context.Filmes == null)
-          {
-              return NotFound();
-          }
-            var filme = await _context.Filmes.FindAsync(id);
+        /* [HttpGet("Busca por ID")]
+         public async Task<ActionResult<Filme>> GetFilme(int id)
+         {
+           if (_context.Filmes == null)
+           {
+               return NotFound();
+           }
+             var filme = await _context.Filmes.FindAsync(id);
 
-            if (filme == null)
-            {
-                return NotFound();
-            }
+             if (filme == null)
+             {
+                 return NotFound();
+             }
 
-            return filme;
-        } */
+             return filme;
+         } */
 
         [HttpGet("Busca por genero")]
         public async Task<ActionResult<IEnumerable<Filme>>> GetFilmeGenero(string genero)
@@ -74,7 +74,8 @@ namespace API_Locadora.Controllers
         {
             if (id != filme.Id)
             {
-                return BadRequest();
+                
+                return Problem("O filme já existe! Faça uma alteração diferente.");
             }
 
             _context.Entry(filme).State = EntityState.Modified;
@@ -103,10 +104,11 @@ namespace API_Locadora.Controllers
         [HttpPost]
         public async Task<ActionResult<Filme>> PostFilme(Filme filme)
         {
-          if (_context.Filmes == null)
-          {
-              return Problem("Entity set 'LocadoraDbContext.Filmes'  is null.");
-          }
+            if (_context.Filmes == null)
+            {
+                return Problem("Entity set 'LocadoraDbContext.Filmes'  is null.");
+            }
+            
             _context.Filmes.Add(filme);
             await _context.SaveChangesAsync();
 
