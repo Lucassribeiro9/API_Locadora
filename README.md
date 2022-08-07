@@ -22,5 +22,48 @@ Após baixar o projeto, você pode abrir com o Visual Studio. Com o programa abe
 
 O Visual Studio irá carregar o projeto e logo após, poderá ser executado.
 
+⚠️ Antes de executar o projeto, verifique o arquivo <b>Program.cs</b> e <b>appsettings.json</b> caso faça uso do banco de dados. Altere a connectionString de acordo com seu banco, pois a migration será gerada conforme o banco utilizado. Caso seja na memória, altere no arquivo <b>FilmeController.cs</b> os métodos conforme o exemplo:
+
+~~~csharp
+ public async Task<ActionResult<IEnumerable<Filme>>> GetFilmeGenero(string genero)
+        {
+            if (_context.Filmes == null)
+            {
+                return NotFound();
+            }
+            var filme = await _context.Filmes.Where(x => x.Genero.Equals(genero)).AsNoTracking().ToListAsync(); // aqui
+            
+            if (filme == null)
+            {
+                return NotFound();
+            }
+
+            return filme;
+        }
+~~~
+
+<h4>Program.cs</h4>
+
+~~~csharp
+var connectionStringMySql = builder.Configuration.GetConnectionString("ConnectionMySql");
+builder.Services.AddDbContext<LocadoraDbContext>(option => option.UseMySql(connectionStringMySql, ServerVersion.Parse("MySQL 5.7.37")
+~~~
+
+<h4>appsettings.json</h4>
+
+```json
+"ConnectionStrings": {
+    "ConnectionMySql": "Server=localhost;Port=3306;initial catalog= locadoradb;uid=root;pwd=1234" // modifique conforme o banco que irá usar
+  }
+```
+
+<a href="https://juniorb2s.medium.com/migrations-o-porque-e-como-usar-12d98c6d9269">O que são Migrations?</a>
 
 
+
+# 🔨 Funcionalidades
+- Retorna os filmes por ordem do ID (GET)
+- Adiciona os filmes (POST)
+- Retorna os filmes por gênero (Busca por gênero)
+- Atualiza os filmes selecionados (PUT)
+- Exclui os filmes selecionados (DELETE)
