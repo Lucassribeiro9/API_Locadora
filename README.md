@@ -8,5 +8,19 @@ O projeto consiste em ter uma API simples, porém funcional, de uma locadora de 
 
 # Tecnologias utilizadas
 [![My Skills](https://skills.thijs.gg/icons?i=cs,mysql&theme=dark)](https://skills.thijs.gg)
+<img width="48" src="https://static.wikia.nocookie.net/logopedia/images/e/ec/Microsoft_Visual_Studio_2022.svg" alt="vs-logo"/>
+
+## 📁 Acesso ao projeto
+O código fonte está disponibilizado neste repositório. Você pode cloná-lo ou baixá-lo.
+
+## 🛠️ Abrir e rodar o projeto
+Após baixar o projeto, você pode abrir com o Visual Studio. Com o programa aberto, clique em:
+
+- Open a project or solution (ou algo similar)
+- Procure o local onde o projeto está salvo (caso esteja zipado, extraia o arquivo primeiro antes de procurar)
+- Clique em Ok
+
+O Visual Studio irá carregar o projeto e logo após, poderá ser executado.
+
 
 
