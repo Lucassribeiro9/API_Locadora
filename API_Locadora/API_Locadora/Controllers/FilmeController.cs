@@ -32,23 +32,7 @@ namespace API_Locadora.Controllers
             return await _context.Filmes.ToListAsync();
         }
 
-        // GET: api/Filme/5
-        /* [HttpGet("Busca por ID")]
-         public async Task<ActionResult<Filme>> GetFilme(int id)
-         {
-           if (_context.Filmes == null)
-           {
-               return NotFound();
-           }
-             var filme = await _context.Filmes.FindAsync(id);
-
-             if (filme == null)
-             {
-                 return NotFound();
-             }
-
-             return filme;
-         } */
+        
 
         [HttpGet("Busca por genero")]
         public async Task<ActionResult<IEnumerable<Filme>>> GetFilmeGenero(string genero)
@@ -58,7 +42,9 @@ namespace API_Locadora.Controllers
                 return NotFound();
             }
             var filme = await _context.Filmes.Where(x => x.Genero.Equals(genero)).ToListAsync();
-
+            /* caso o acesso seja feito pela memória, coloque a variável abaixo
+              var filme = await _context.Filmes.Where(x => x.Genero.Equals(genero)).AsNoTracking().ToListAsync();
+            */
             if (filme == null)
             {
                 return NotFound();
@@ -110,7 +96,7 @@ namespace API_Locadora.Controllers
             }
             if (FilmeExistsName(filme.Nome))
             {
-                return Problem("Erro");
+                return Problem("Erro: Já existe um filme com este nome!");
             }
             if (ModelState.IsValid)
             {
