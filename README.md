@@ -55,13 +55,28 @@ builder.Services.AddDbContext<LocadoraDbContext>(option => option.UseMySql(conne
 
 ```json
 "ConnectionStrings": {
-    "ConnectionMySql": "Server=localhost;Port=3306;initial catalog= locadoradb;uid=root;pwd=1234" // modifique conforme o banco que irá usar
+    "ConnectionMySql": "Server=localhost;Port=3306;initial catalog=nomedobanco;uid=root;pwd=senhadobanco" // modifique conforme o banco que irá usar
   }
 ```
 
 <a href="https://juniorb2s.medium.com/migrations-o-porque-e-como-usar-12d98c6d9269">O que são Migrations?</a>
 
+<h4>Adicionando Migration</h4>
 
+```
+ Add-Migration inicial
+```
+Após a criação da migration, para a criação das tabelas e adaptação do CRUD, atualize sua base com o seguinte comando: 
+
+```
+ update-database
+```
+
+Para remover:
+
+```
+remove-migration "nome da migration"
+```
 
 # 🔨 Funcionalidades
 - Retorna os filmes por ordem do ID (GET)
@@ -69,3 +84,4 @@ builder.Services.AddDbContext<LocadoraDbContext>(option => option.UseMySql(conne
 - Retorna os filmes por gênero (Busca por gênero)
 - Atualiza os filmes selecionados (PUT)
 - Exclui os filmes selecionados (DELETE)
+
