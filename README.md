@@ -6,14 +6,14 @@ API_Locadora
 ![image](https://user-images.githubusercontent.com/57766036/183265562-90a2228c-dfeb-4ffe-ae2b-36f125980ad4.png)
 
 # 📖 Descrição do projeto
-O projeto consiste em ter uma API simples, porém funcional, de uma locadora de filmes. Sua primeira versão traz apenas o registro dos filmes, que podem ser cadastrados contendo nome e gênero. No decorrer do documento, será mostrado as funcionalidades do projeto e as ferramentas necessárias para sua execução e as ferramentas utilizadas para seu desenvolvimento. Esta é sua primeira versão e serão incrementadas mais funcionalidades no futuro.
+O projeto consiste em ter uma API simples, porém funcional, de uma locadora de filmes. Sua primeira versão traz apenas o registro dos filmes, que podem ser cadastrados contendo nome e gênero. No decorrer do documento, será mostrado as funcionalidades do projeto e as ferramentas necessárias para sua execução, junto com as ferramentas utilizadas para seu desenvolvimento. Esta é sua primeira versão e serão incrementadas mais funcionalidades no futuro.
 
 # ✔️ Tecnologias utilizadas
 [![My Skills](https://skills.thijs.gg/icons?i=cs,mysql&theme=dark)](https://skills.thijs.gg)
 <img width="48" src="https://static.wikia.nocookie.net/logopedia/images/e/ec/Microsoft_Visual_Studio_2022.svg" alt="vs-logo"/>
 
 ## 📁 Acesso ao projeto
-O código fonte está disponibilizado neste repositório. Você pode cloná-lo ou baixá-lo.
+O código fonte está disponibilizado neste repositório. Você pode cloná-lo ou baixá-lo. Caso não esteja habituado a usar o Git e GitHub, <a href="https://github.com/rafaballerini/GitTutorial">clique aqui</a>
 
 ## 🛠️ Abrir e rodar o projeto
 Após baixar o projeto, você pode abrir com o Visual Studio. Com o programa aberto, clique em:
