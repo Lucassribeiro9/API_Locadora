@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Adicionando banco de dados
 var connectionStringMySql = builder.Configuration.GetConnectionString("ConnectionMySql");
 builder.Services.AddDbContext<LocadoraDbContext>(option => option.UseMySql(
                 connectionStringMySql,

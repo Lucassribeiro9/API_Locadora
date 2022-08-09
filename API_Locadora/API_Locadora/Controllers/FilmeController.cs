@@ -54,7 +54,6 @@ namespace API_Locadora.Controllers
         }
 
         // PUT: api/Filme/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("Atualizar")]
         public async Task<IActionResult> PutFilme(int id, Filme filme)
         {
@@ -86,7 +85,6 @@ namespace API_Locadora.Controllers
         }
 
         // POST: api/Filme
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Filme>> PostFilme(Filme filme)
         {
