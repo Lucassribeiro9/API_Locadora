@@ -80,8 +80,22 @@ remove-migration "nome da migration"
 
 # 🔨 Funcionalidades
 - Retorna os filmes por ordem do ID (GET)
+
+![get](https://user-images.githubusercontent.com/57766036/183537264-257066af-c570-4ea1-b460-50d415f41668.gif)
+
 - Adiciona os filmes (POST)
+
+![post](https://user-images.githubusercontent.com/57766036/183537300-ca991387-b473-4b00-9469-7ee8ec0e7e64.gif)
+
+
 - Retorna os filmes por gênero (Busca por gênero)
+
+![post](https://user-images.githubusercontent.com/57766036/183537316-7fc92bcc-503e-4849-8d40-b730d2d22bdb.gif)
+
+
 - Atualiza os filmes selecionados (PUT)
 - Exclui os filmes selecionados (DELETE)
+
+
+
 
