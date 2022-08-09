@@ -94,7 +94,14 @@ remove-migration "nome da migration"
 
 
 - Atualiza os filmes selecionados (PUT)
+
+![put](https://user-images.githubusercontent.com/57766036/183777214-3e8a1f5a-8151-4147-a880-019f19300c1a.gif)
+
+
 - Exclui os filmes selecionados (DELETE)
+
+![delete](https://user-images.githubusercontent.com/57766036/183777239-5bcf93c8-e12d-4d02-a90f-595114dcc3c7.gif)
+
 
 
 
