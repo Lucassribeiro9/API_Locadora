@@ -90,7 +90,7 @@ remove-migration "nome da migration"
 
 - Retorna os filmes por gênero (Busca por gênero)
 
-![post](https://user-images.githubusercontent.com/57766036/183537316-7fc92bcc-503e-4849-8d40-b730d2d22bdb.gif)
+![getbygenero](https://user-images.githubusercontent.com/57766036/183538059-a52908bd-a2c7-4210-8c8c-a66b7dda99f7.gif)
 
 
 - Atualiza os filmes selecionados (PUT)
